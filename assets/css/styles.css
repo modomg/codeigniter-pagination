@@ -1,0 +1,45 @@
+/* Reset Script */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; background: transparent;}
+body{line-height: 1;}
+ol, ul{list-style: none;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after{content: ''; content: none;}
+:focus{outline: 0;}
+ins{text-decoration: none;}
+del{text-decoration: line-through;}
+table{border-collapse: collapse; border-spacing: 0;}
+
+/* Universal Classes/Stuff */
+body {font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#000; line-height:14px; background:#fff; padding: 10px; }
+a { color:#333; text-decoration:underline; }
+a:hover { color:#000; text-decoration:none; }
+.clr { clear:both; }
+
+.pager{margin: 0; float:right;}
+.pager ul{float: right;}
+.pager li.results{margin-right: 4px;}
+.pager ul li{color: #000; float: left; margin: 0 3px 0 3px; line-height:24px;}
+.pager ul li a{color: #000; font-size: 12px; text-decoration: none;}
+.pager ul li a:hover{text-decoration:underline;}
+.pager ul li a.active{color: #3399cc; text-decoration:underline;}
+.pager ul li.select{border-left:1px solid #999; padding-left:10px; margin-left:5px;}
+
+#browse_table p{text-align:right; margin-bottom:5px;}
+#browse_table table{border-collapse: collapse; width: 100%; margin-bottom: 15px;}
+#browse_table table th, #browse_table table td{font-size: 12px; border:1px solid #999;}
+#browse_table table th.first{margin-left: 1px !important;}
+#browse_table table td{padding: .5em 1em; vertical-align: middle; text-align:left;}
+#browse_table table tr.headers{background:url(../images/table_browse_header.jpg) repeat-x; height:30px; text-align:left;}
+#browse_table table th.first{margin-left: 1px !important;}
+#browse_table table tr th div{display: block; padding: 9px 1em 7px 1em; margin-right: 2px; margin-left: 1px; position: relative;}
+#browse_table table tr td.manage{text-align:center;}
+#browse_table table tr, #browse_table table tr td{background-color:#f1f1f1;}
+#browse_table table tr.odd, #browse_table table tr.odd td {background-color:#e3e3e3;}
+
+#browse_table ul.sort{position: absolute; top: 44%; right: 3px;}
+#browse_table ul.sort li{float: left;}
+#browse_table ul.sort li a{display: block; padding: 2px;}
+#browse_table ul.sort li.up a{display: block; background: url(../images/arrow_up.png) no-repeat top right; width: 7px; height: 5px;}
+#browse_table ul.sort li.down a{display: block; background: url(../images/arrow_down.png) no-repeat top right; width: 7px; height: 5px;}
+
+#ajax_loader{position: absolute; top:0px; left:0px;	display:none; background-color: #d37474;}
