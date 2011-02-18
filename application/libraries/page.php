@@ -231,7 +231,7 @@ class Page{
 		return " onclick=\"new Ajax.Updater('".$this->update_div."','".$this->base_url."',{".$this->functions."method: 'post', parameters: 'page=$page_no".$pars."'}); return false;\"";
 	}
 
-	public function create_sort_link($col, $dir)
+	public function create_sort_link($col, $dir, $link_text='')
 	{
 		if (!isset($pars)) $pars='';
         if($this->add_par_str_s > '')
@@ -241,12 +241,12 @@ class Page{
 
 		if($this->is_ajax)
 		{
-			echo "<a href=\"#\" onclick=\"new Ajax.Updater('".$this->update_div."','".$this->base_url."',{".$this->functions."method: 'post', parameters: 'col=$col&dir=$dir".$pars."'}); return false;\"></a>";
+			echo "<a href=\"#\" onclick=\"new Ajax.Updater('".$this->update_div."','".$this->base_url."',{".$this->functions."method: 'post', parameters: 'col=$col&dir=$dir".$pars."'}); return false;\">".$link_text."</a>";
 		}
 		else
 		{
 			if(!isset($pars)) $pars = '';
-			echo "<a href=\"".$this->base_url."?col=$col&dir=$dir".$pars."\"></a>";
+			echo "<a href=\"".$this->base_url."?col=$col&dir=$dir".$pars."\">".$link_text."</a>";
 		}
 	}
 
