@@ -9,7 +9,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
  * For installation and usage: https://bitbucket.org/modomg/codeigniter-pagination/
  *
  * @copyright	Copyright (c) 2011 Modo Media Group
- * @version 	1.0
+ * @version 	1.02
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -49,7 +49,6 @@ class Page{
 	var $stats_title	= 'results'; // will show the title for the page stats
 	var $view_all_link	= TRUE; // will show the view all link
 	var $view_all_text	= 'View All'; // text for $view_all_link
-	var $show_trai_sl	= TRUE; // show trailing slash - for $url_type='d'
 	var $add_pars		= array(); //Additional parameters
 	var $add_par_str	= ''; //Additional parameters string - filled in automatically
 	var $add_par_str_s	= ''; //Additional parameters string - filled in automatically (for sorting)
@@ -67,6 +66,11 @@ class Page{
 	var $is_ajax		= FALSE; //tells the script to use ajax or not
 	var $update_div		= ''; //Div that will be updated with the new information
 	var $functions		= 'onLoading: showAjaxLoading, onLoaded: hideAjaxLoading, '; //additional functions
+    
+    //SEO Options
+	var $show_trai_sl	= TRUE; // show trailing slash - for $url_type='d'
+    var $no_follow      = TRUE; // add $no_follow_text to everything but page 1
+    var $no_follow_text = ' rel="nofollow"'; // no follow text
 
 	public function __construct()
 	{
@@ -212,7 +216,10 @@ class Page{
 		if($is_link)
 		{
 			if (!isset($ajax)) $ajax='';
-			$link = $this->page_tag_begin.'<a href="'.$href.'"'.$class.''.$ajax.'>'.$text.'</a>'.$this->page_tag_end;
+            
+            $rel = ($this->no_follow == TRUE && $page_no != 1) ? $this->no_follow_text : '';
+            
+			$link = $this->page_tag_begin.'<a href="'.$href.'"'.$class.$ajax.$rel.'>'.$text.'</a>'.$this->page_tag_end;
 
 		}
 		else
