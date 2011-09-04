@@ -9,7 +9,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
  * For installation and usage: https://bitbucket.org/modomg/codeigniter-pagination/
  *
  * @copyright	Copyright (c) 2011 Modo Media Group
- * @version 	1.02
+ * @version 	1.03
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -352,7 +352,7 @@ class Page{
 
 			if($end > $this->total_rows) $end = $this->total_rows;
 
-			echo "$start to $end (of ".$this->total_rows." ".$this->stats_title.")";
+			echo number_format($start, 0)." to ".number_format($end, 0)." (of ".number_format($this->total_rows, 0)." ".$this->stats_title.")";
 		}
 	}
 }
