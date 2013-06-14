@@ -2,9 +2,6 @@ CodeIgniter Pagination
 ======================
 Simple CodeIgniter library that makes working with pagination easier
 
-Mercurial: https://bitbucket.org/modomg/codeigniter-pagination
-Git: https://github.com/modomg/codeigniter-pagination
-
 Welcome
 =======
 Here is a simple, but powerful, Pagination Library for CodeIgniter. I have been using this in our projects for years, so it is very well tested.
