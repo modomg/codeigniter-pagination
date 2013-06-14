@@ -6,7 +6,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
  * Description:
  * This library helps you work with pagination easier
  *
- * For installation and usage: https://bitbucket.org/modomg/codeigniter-pagination/
+ * For installation and usage: https://github.com/modomg/codeigniter-pagination
  *
  * @copyright	Copyright (c) 2011 Modo Media Group
  * @version 	1.03
