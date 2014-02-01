@@ -6,7 +6,7 @@
 </div>
 <div class="clr"></div>
 <div id="browse_table">
-    <p>Displaying <?=$this->page->pageStats();?></p>
+    <p>Displaying <?=$this->page->page_stats();?></p>
     
     <table cellspacing="0">
     <thead>
