@@ -6,7 +6,7 @@
  * Description:
  * This library helps you work with pagination easier
  *
- * @version     1.1
+ * @version     1.2
  * @author      Chris Gmyr <chris@modomediagroup.com>
  * @license     MIT
  * @license     http://opensource.org/licenses/mit-license.php
@@ -43,6 +43,7 @@ class Page
     var $item_class     = ''; // CSS class for main items
     var $prev_class     = ''; // CSS class for previous link
     var $next_class     = ''; // CSS class for next link
+    var $all_class      = ''; // CSS class for view all link
     var $cur_page_class = 'active'; // CSS class for active link
 
     //AJAX Options
@@ -111,19 +112,19 @@ class Page
 
             if ($this->cur_page > 1) {
                 $page = $this->cur_page - 1;
-                $prev = $this->create_link('Prev', $page);
+                $prev = $this->create_link('Prev', $page, true, $this->prev_class);
             } else {
                 if ($this->show_prev) {
-                    $prev = $this->create_link('Prev', $page);
+                    $prev = $this->create_link('Prev', $page, true, $this->prev_class);
                 }
             }
 
             if ($this->cur_page < $this->max_pages) {
                 $page = $this->cur_page + 1;
-                $next = $this->create_link('Next', $page);
+                $next = $this->create_link('Next', $page, true, $this->next_class);
             } else {
                 if ($this->show_next) {
-                    $prev = $this->create_link('Next', $page);
+                    $prev = $this->create_link('Next', $page, true, $this->next_class);
                 }
             }
 
@@ -135,7 +136,7 @@ class Page
             }
             echo $prev . $nav . $next;
             if ($this->view_all_link) {
-                echo $this->create_link($this->view_all_text, 'all');
+                echo $this->create_link($this->view_all_text, 'all', true, $this->all_class);
             }
         } else {
             echo $this->create_link('1', '1', false, $this->cur_page_class);
@@ -145,6 +146,7 @@ class Page
     public function create_link($text, $page_no, $is_link = true, $css_class = '')
     {
         $css_class ? $class = ' class="' . $css_class . '"' : $class = '';
+        $href = '';
 
         if ($this->url_type == 'd' && $this->show_trai_sl == true && $page_no != 1) {
             $href = $this->base_url . $page_no . '/';
@@ -286,8 +288,6 @@ class Page
         if ($this->total_rows == 0) {
             echo $this->total_rows . " " . $this->stats_title;
         } else {
-            $from = 0;
-            $to = 0;
             $from = $this->cur_page - 1;
 
             if (!isset($maxPage)) {

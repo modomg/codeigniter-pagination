@@ -29,6 +29,7 @@ Features
 
 Versions
 ========
+* **v1.2** - Fixed next and previous link css classes, added view all css class, removed unneeded variables
 * **v1.1** - Updated copyright, license information, and formatting. Must update views to use: page_stats()
 * **v1.03** - Added number formatting to pageStats()
 * **v1.02** - Added rel="nofollow" option for links other than page 1
